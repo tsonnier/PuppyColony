@@ -23,7 +23,7 @@
                 <ItemTemplate>
                     
                     <b style="font-size: large; font-style: normal">
-                        <div id="<%#: Item.Name %>Name"><%#: Item.Name %></div>  <div id="<%#: Item.Name %>Value"><%#: Item.Quantity %></div> <asp:Button ID="<%#: Item.Quantity %>Build" runat="server" Text="Build" Onclick="Build_Click"/>
+                        <div id="<%#: Item.Name %>Name"><%#: Item.Name %></div>  <div id="<%#: Item.Name %>Value"><%#: Item.Quantity %></div> <asp:Button Name="<%#: Item.Name %>Build" runat="server" Text="Build" Onclick="Build_Click"/>
                     </b>
                 </ItemTemplate>
                 <ItemSeparatorTemplate>  <br />  </ItemSeparatorTemplate>

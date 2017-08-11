@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<head>
+    <meta charset="utf-8" />
+    <title>Puppy Colony!</title>
+
+</head>
+<body>
+
+
+    <table align="center" width="100%" cellspacing="5" cellpadding="5px">
+      <tbody>
+        <tr>
+          <td><a class="navbar-brand" href="./Index.html">Puppy Colony</a></td>
+          <td><a href="./Index.html">Home</a> | <a href="./About">About</a> | <a href="./Contact">Contact</a></td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+
+	<br>
+    
+
+    <div id="TitleContent" style="text-align: center">
+        <a href="./Index.html">
+            <image src="./Images/corgi.jpg" ImageUrl="./Images/corgi.jpg" BorderStyle="None" Height="229" Width="650" />
+        </a>
+        <br />
+    </div>
+
+    <br>
+   
+   	<table width="100%" border="0" cellspacing="5" cellpadding="5">
+   		<tbody>
+		    <tr>
+		      <td>
+	            <div id="ColonyHubRow">
+                <span id="ColonyHubName">Colony Hub</span>  
+                <span id="ColonyHubValue">1</span> 
+                <button name="ColonyHubBuild" Text="Build" Onclick="Build_Click" />
+                </div>
+              
+                <div id="MineRow">
+                <span id="MineName">Mine</span>  
+                <span id="MineValue">0</span> 
+                <button name="MineBuild" Text="Build" Onclick="Build_Click" />
+                </div>
+                
+                <div id="OxygenGenRow">
+                <span id="OxygenGenName">Oxygen Generator</span>  
+                <span id="OxygenGenValue">1</span> 
+                <button name="OxygenGenBuild" Text="Build" Onclick="Build_Click" />
+                </div>
+              </td>
+		      <td>
+                    <h2> Messages</h2>
+                    <p id="MessageList">
+                        No messages.
+                    </p>
+              </td>
+		      <td>
+                    <h2>Resources</h2>
+                    <b style="font-size: large; font-style: normal">
+                    <span id="MetalName">Metal </span><span id="MetalValue">100</span>
+                    </b>
+              
+              </td>
+		    </tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
