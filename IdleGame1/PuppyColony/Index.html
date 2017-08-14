@@ -6,10 +6,61 @@
     <meta charset="utf-8" />
     <title>Puppy Colony!</title>
 
+	<script language="javascript">
+		
+		<!-- Variables containing lists of game data -->
+		
+		var buildList = [{name:"Colony Hub", value:"1", enabled:"false", visible:"true"},
+						 {name:"Mine", value:"0", enabled:"false", visible:"false"},
+						 {name:"Oxygen Generator", value:"0", enabled:"false", visible:"false"}]
+		
+		var messageList = "No messages.";
+		
+		var resourceList = [{name:"Metal", value:"100", enabled:"true"}]
+		
+		function writeBuildings()
+		{
+			var outputString = "";
+			
+			for(i=0;i<buildList.length; i++)
+				{
+					outputString += "<div id=\"" + buildList[i].name + "\" >" 
+						+ buildList[i].name + "\t" 
+					    + buildList[i].value + "</div>"
+				}
+			document.getElementById("BuildingList").innerHTML = outputString;
+		}
+		
+		function writeMessages()
+		{
+			document.getElementById("MessageList").innerHTML = messageList;
+		}
+		
+		function writeResources()
+		{
+			var outputString = "";
+			
+			for(i=0;i<resourceList.length; i++)
+				{
+					outputString += "<div id=\"" + resourceList[i].name + "\" >" 
+						+ resourceList[i].name + "\t" 
+					    + resourceList[i].value + "</div>"
+				}
+			
+			document.getElementById("ResourceList").innerHTML = outputString;
+		}
+			
+		function initialize()
+		{
+			writeBuildings();
+			writeMessages();
+			writeResources();
+		}
+	
+	</script>
+
 </head>
-<body>
-
-
+<body onload="initialize()">
     <table align="center" width="100%" cellspacing="5" cellpadding="5px">
       <tbody>
         <tr>
@@ -36,36 +87,20 @@
    		<tbody>
 		    <tr>
 		      <td>
-	            <div id="ColonyHubRow">
-                <span id="ColonyHubName">Colony Hub</span>  
-                <span id="ColonyHubValue">1</span> 
-                <button name="ColonyHubBuild" Text="Build" Onclick="Build_Click" />
-                </div>
-              
-                <div id="MineRow">
-                <span id="MineName">Mine</span>  
-                <span id="MineValue">0</span> 
-                <button name="MineBuild" Text="Build" Onclick="Build_Click" />
-                </div>
-                
-                <div id="OxygenGenRow">
-                <span id="OxygenGenName">Oxygen Generator</span>  
-                <span id="OxygenGenValue">1</span> 
-                <button name="OxygenGenBuild" Text="Build" Onclick="Build_Click" />
-                </div>
+           		<h2>Buildings</h2>
+            	<div id="BuildingList">  <!-- filled by Javascript -->
+				</div>
               </td>
 		      <td>
-                    <h2> Messages</h2>
-                    <p id="MessageList">
-                        No messages.
-                    </p>
+					<h2> Messages</h2>
+					<p id="MessageList">  <!-- filled by Javascript -->
+					</p>
               </td>
 		      <td>
-                    <h2>Resources</h2>
-                    <b style="font-size: large; font-style: normal">
-                    <span id="MetalName">Metal </span><span id="MetalValue">100</span>
-                    </b>
-              
+				  <h2>Resources</h2>
+                  <div id="ResourceList">  <!-- filled by Javascript -->
+                  </div>
+                                
               </td>
 		    </tr>
 		</tbody>
