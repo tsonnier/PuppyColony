@@ -22,12 +22,17 @@
 		{
 			var outputString = "";
 			
+			outputString+="<table width=\"100%\">"
+			
 			for(i=0;i<buildList.length; i++)
 				{
-					outputString += "<div id=\"" + buildList[i].name + "\" >" 
-						+ buildList[i].name + "\t" 
-					    + buildList[i].value + "</div>"
+					outputString += "<tr>";
+					outputString += "<td>" + buildList[i].name + "</td>";
+					outputString += "<td>" + buildList[i].value + "</td>";
+					outputString += "<td>" + "<button name=\"" + buildList[i].name + "Build\" onclick=\"BuildClick(" + buildList[i].name + ")\">Build</button>" + "</td>";
+					outputString += "</tr>";
 				}
+			outputString += "</table>";
 			document.getElementById("BuildingList").innerHTML = outputString;
 		}
 		
@@ -44,7 +49,7 @@
 				{
 					outputString += "<div id=\"" + resourceList[i].name + "\" >" 
 						+ resourceList[i].name + "\t" 
-					    + resourceList[i].value + "</div>"
+					    + resourceList[i].value + "</div>";
 				}
 			
 			document.getElementById("ResourceList").innerHTML = outputString;
