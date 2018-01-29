@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdleGame1", "IdleGame1\IdleGame1.csproj", "{4107AB2D-7DE0-43CA-9BBF-6DA8C6F1B5A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuppyColony", "PuppyColony\PuppyColony.csproj", "{35ADC733-990A-4C65-B324-97DE9E4EF297}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4107AB2D-7DE0-43CA-9BBF-6DA8C6F1B5A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4107AB2D-7DE0-43CA-9BBF-6DA8C6F1B5A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4107AB2D-7DE0-43CA-9BBF-6DA8C6F1B5A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35ADC733-990A-4C65-B324-97DE9E4EF297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35ADC733-990A-4C65-B324-97DE9E4EF297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35ADC733-990A-4C65-B324-97DE9E4EF297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35ADC733-990A-4C65-B324-97DE9E4EF297}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
