@@ -4,9 +4,12 @@ var buildList = [{name:"Colony Hub", value:1, enabled:"false", visible:"true"},
 				 {name:"Mine", value:0, enabled:"false", visible:"false"},
 				 {name:"Oxygen Generator", value:0, enabled:"false", visible:"false"}];
 
-var messageList = "No messages.";
+var messageList = [{ text: "<td>No messages.</td>" }];
 
-var resourceList = [{name:"Metal", value:100, enabled:"true"}];
+var resourceList = [{ name: "Metal", value: 100, enabled: "true" },
+                    { name: "Wood", value: 0, enabled: "false" }];
+
+var pause = false;
 
 function BuildClick(type)
 {
@@ -44,8 +47,21 @@ function writeBuildings()
 
 function writeMessages()
 {
-	"use strict";
-	document.getElementById("MessageList").innerHTML = messageList;
+    "use strict";
+    var outputString = "";
+
+    outputString += "<table width=\"100%\">";
+
+    outputString += "<tr>";
+    outputString += messageList[0].text;
+    outputString += "</tr>";
+    
+
+    //alert("OutputString = " + outputString);
+
+    outputString += "</table>";
+
+	document.getElementById("MessageList").innerHTML = outputString;
 }
 
 function writeResources()
@@ -63,6 +79,19 @@ function writeResources()
 	document.getElementById("ResourceList").innerHTML = outputString;
 }
 
+function tick()
+{
+    messageList[0].text += "<td> Next Tick </td>";
+
+    writeBuildings();
+    writeMessages();
+    writeResources();
+    // Check if pause is activated, if so skip the loop
+
+    // Check values, increment them if necessary
+
+    // Check tick() again in x milliseconds
+}
 
 
 function initialize()
@@ -71,4 +100,6 @@ function initialize()
 	writeBuildings();
 	writeMessages();
 	writeResources();
+
+	//setInterval(tick, 200);
 }
