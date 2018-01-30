@@ -52,10 +52,12 @@ function writeMessages()
 
     outputString += "<table width=\"100%\">";
 
-    outputString += "<tr>";
-    outputString += messageList[0].text;
-    outputString += "</tr>";
-    
+    for (var i = 0; i < messageList.length; i++)
+    {
+        outputString += "<tr>";
+        outputString += messageList[i].text;
+        outputString += "</tr>";
+    }
 
     //alert("OutputString = " + outputString);
 
@@ -81,7 +83,7 @@ function writeResources()
 
 function tick()
 {
-    messageList[0].text += "<td> Next Tick </td>";
+    messageList.push({text: "<td> Next Tick </td>"});
 
     writeBuildings();
     writeMessages();
@@ -91,6 +93,23 @@ function tick()
     // Check values, increment them if necessary
 
     // Check tick() again in x milliseconds
+}
+
+function pauseToggle()
+{
+    if (pause)
+    {
+        pause = false;
+        messageList.push({text: "<td> Switch to unpaused. </td>"});
+    }
+    else
+    {
+        pause = true;
+        messageList.push({ text: "<td> Switch to paused. </td>" });
+    }
+
+    writeMessages();
+        
 }
 
 
