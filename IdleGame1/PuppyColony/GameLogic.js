@@ -11,6 +11,8 @@ var resourceList = [{ name: "Metal", value: 100, enabled: "true" },
 
 var pause = false;
 
+var currDate; // Date
+
 function BuildClick(type)
 {
 	"use strict";
@@ -81,14 +83,25 @@ function writeResources()
 	document.getElementById("ResourceList").innerHTML = outputString;
 }
 
+function writeDate()
+{
+    currDate = new Date();
+
+    document.getElementById("Time").innerHTML = currDate.toDateString() + " " + currDate.toLocaleTimeString();
+}
+
 function tick()
 {
-    messageList.push({text: "<td> Next Tick </td>"});
+    //messageList.push({ text: "<td> Next Tick </td>" });
 
     writeBuildings();
     writeMessages();
     writeResources();
+    writeDate();
     // Check if pause is activated, if so skip the loop
+
+    if (pause)
+        return;
 
     // Check values, increment them if necessary
 
@@ -119,6 +132,9 @@ function initialize()
 	writeBuildings();
 	writeMessages();
 	writeResources();
+	writeDate();
 
-	//setInterval(tick, 200);
+	currDate = new Date();
+
+	setInterval(tick, 200);
 }
