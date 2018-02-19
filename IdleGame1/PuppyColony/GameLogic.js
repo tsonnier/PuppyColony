@@ -6,6 +6,13 @@ var buildList = [{name:"Colony Hub", value:1, enabled:"false", visible:"true"},
 
 var messageList = [{ text: "<td>No messages.</td>" }];
 
+function AddMessage(message)
+{
+    var outputString = "";
+    outputString += "<td>" + message + "</td>";
+    messageList.push({ text: outputString });
+}
+
 var resourceList = [{ name: "Metal", value: 100, enabled: "true" },
                     { name: "Wood", value: 0, enabled: "false" }];
 
@@ -15,12 +22,14 @@ var currDate; // Date
 
 function BuildClick(type)
 {
-	"use strict";
+    "use strict";
+    var outputString = "";
 	for(var i=0; i< buildList.length;i++)
 	{
 		if (buildList[i].name === type)
 		{
-			buildList[i].value++;
+		    buildList[i].value++;
+		    AddMessage(buildList[i].name);
 			break;
 		}
 	}
